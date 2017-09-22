@@ -1,0 +1,6 @@
+= BowlingGameKataJUnit5
+
+JUnit 5 version of Uncle Bob's famous BowlingGame kata.
+http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata
+
+Just a short example for @Nested tests and @DisplayName
