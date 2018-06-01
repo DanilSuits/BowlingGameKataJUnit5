@@ -31,11 +31,14 @@ public class VeeTwo {
                     int secondBall = firstBall + 1;
                     int thirdBall = secondBall + 1;
 
-                    // TODO
                     int scoreInFrame
                             = pinsKnockedDown[firstBall] +
-                            pinsKnockedDown[secondBall] +
-                            pinsKnockedDown[thirdBall];
+                            pinsKnockedDown[secondBall];
+
+                    if (scoreInFrame >= 10) {
+                        scoreInFrame +=
+                                pinsKnockedDown[thirdBall];
+                    }
 
                     gameScore += scoreInFrame;
                 }
@@ -46,7 +49,7 @@ public class VeeTwo {
                 int[] framePositions = new int[10];
                 int nextFrame = 0;
 
-                for (int pos = 0; pos  < framePositions.length; ++pos) {
+                for (int pos = 0; pos < framePositions.length; ++pos) {
                     framePositions[pos] = nextFrame;
                     // TODO
                     nextFrame += 1;
