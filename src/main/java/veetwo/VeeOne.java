@@ -18,6 +18,10 @@ public class VeeOne {
     public Legacy.Game legacy() {
         return legacy.game();
     }
+
+    public Legacy.Game adapter() {
+        return legacy();
+    }
     
     public Game game() {
         class VeeOneGame implements Game {
