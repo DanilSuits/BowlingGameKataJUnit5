@@ -44,7 +44,6 @@ public class VeeTwoTest {
     }
 
     @Test
-    @Disabled
     public void testBustInTheFinalPin() {
         VeeTwo veeTwo = new VeeTwo();
         VeeTwo.Game game = veeTwo.game();
