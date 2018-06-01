@@ -1,4 +1,5 @@
 import veetwo.Legacy;
+import veetwo.VeeOne;
 
 /**
  * The Bowling Game Kata from UncleBob
@@ -8,9 +9,9 @@ import veetwo.Legacy;
  * @version 1.0
  */
 public class BowlingGame {
-    static final Legacy factory = new Legacy();
+    static final VeeOne factory = new VeeOne();
 
-    final Legacy.Game game = factory.game();
+    final Legacy.Game game = factory.legacy();
 
     public void roll(int pins) {
         game.roll(pins);

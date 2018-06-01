@@ -8,11 +8,17 @@ package veetwo;
 /**
  * @author Danil Suits (danil@vast.com)
  */
-class VeeOne {
+public class VeeOne {
     interface Game {
         int score(int... pinsKnocedDown);
     }
 
+    final Legacy legacy = new Legacy();
+
+    public Legacy.Game legacy() {
+        return legacy.game();
+    }
+    
     public Game game() {
         class VeeOneGame implements Game {
             @Override
