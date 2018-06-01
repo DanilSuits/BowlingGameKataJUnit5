@@ -1,3 +1,5 @@
+import veetwo.Legacy;
+
 /**
  * The Bowling Game Kata from UncleBob
  * http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata
@@ -6,14 +8,21 @@
  * @version 1.0
  */
 public class BowlingGame {
+    static final Legacy factory = new Legacy();
+
+    final Legacy.Game game = factory.game();
+
     private final int[] rolls = new int[21];
     private int currentRoll;
 
     public void roll(int pins) {
+        game.roll(pins);
         rolls[currentRoll++] = pins;
     }
 
     public int score() {
+        if (true) return game.score();
+        
         int score = 0;
         int frameIndex = 0;
         for (int frame = 0; frame < 10; frame++) {
