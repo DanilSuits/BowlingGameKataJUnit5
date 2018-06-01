@@ -15,7 +15,27 @@ public class VeeTwo {
     }
 
     public Game game() {
-        Game game = readings -> 300;
+        class SimpleGame implements Game {
+
+            @Override
+            public int score(int... readings) {
+                int [] pinsKnockedDown = pinsKnockedDown(readings);
+                return veeOneScore(pinsKnockedDown);
+            }
+
+            private int veeOneScore(int[] pinsKnockedDown) {
+                // TODO:
+                return 300;
+            }
+
+            private int[] pinsKnockedDown(int[] readings) {
+                // TODO
+                int [] perfectGame = {10,10,10,10,10,10,10,10,10,10};
+                return perfectGame;
+            }
+        }
+        
+        Game game = new SimpleGame();
 
         return game;
     }
