@@ -11,7 +11,7 @@ import veetwo.VeeOne;
 public class BowlingGame {
     static final VeeOne factory = new VeeOne();
 
-    final Legacy.Game game = factory.adapter();
+    final Legacy.Game game = factory.legacy();
 
     public void roll(int pins) {
         game.roll(pins);

@@ -16,13 +16,7 @@ public class VeeOne {
         int score(int... pinsKnocedDown);
     }
 
-    final Legacy legacy = new Legacy();
-
     public Legacy.Game legacy() {
-        return legacy.game();
-    }
-
-    public Legacy.Game adapter() {
         class Adapter implements Legacy.Game {
             List<Integer> pins = new ArrayList();
             VeeOne.Game game = game();
