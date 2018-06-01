@@ -51,7 +51,7 @@ public class VeeTwo {
 
                 for (int pos = 0; pos < framePositions.length; ++pos) {
                     framePositions[pos] = nextFrame;
-                    if (10 == pinsKnockedDown[pos]) {
+                    if (10 == pinsKnockedDown[nextFrame]) {
                         nextFrame += 1;
                     } else {
                         nextFrame += 2;
@@ -62,9 +62,18 @@ public class VeeTwo {
 
             private int[] pinsKnockedDown(int[] readings) {
                 int[] perfectGame = new int[readings.length];
+                int laneReset = 0;
                 for (int pos = 0; pos < perfectGame.length; ++pos) {
                     // TODO
-                    perfectGame[pos] = 10 - readings[pos];
+                    if (pos == laneReset) {
+                        perfectGame[pos] = 10 - readings[pos];
+                        if (0 == readings[pos]) {
+                            laneReset = pos + 1;
+                        }
+                    } else {
+                        perfectGame[pos] = readings[pos -1 ] - readings[pos];
+                        laneReset = pos + 1;
+                    }
                 }
                 return perfectGame;
             }
