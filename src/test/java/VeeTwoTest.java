@@ -61,6 +61,6 @@ public class VeeTwoTest {
         int [] perfectGame = {1,0,0,0,0,0,0,0,0,0,0,0,0};
 
         int score = game.score(perfectGame);
-        Assertions.assertEquals(280, score);
+        Assertions.assertEquals(290, score);
     }
 }
