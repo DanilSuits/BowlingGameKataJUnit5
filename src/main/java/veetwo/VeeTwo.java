@@ -15,7 +15,7 @@ public class VeeTwo {
     }
 
     public Game game() {
-        Game game = readings -> 0;
+        Game game = readings -> 300;
 
         return game;
     }
