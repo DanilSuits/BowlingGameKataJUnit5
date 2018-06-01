@@ -24,8 +24,7 @@ public class VeeTwo {
             }
 
             private int veeOneScore(int[] pinsKnockedDown) {
-                // TODO
-                int[] framePositions = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+                int[] framePositions = framePositions(pinsKnockedDown);
 
                 int gameScore = 0;
                 for (int firstBall : framePositions) {
@@ -41,6 +40,18 @@ public class VeeTwo {
                     gameScore += scoreInFrame;
                 }
                 return gameScore;
+            }
+
+            private int[] framePositions(int[] pinsKnockedDown) {
+                int[] framePositions = new int[10];
+                int nextFrame = 0;
+
+                for (int pos = 0; pos  < framePositions.length; ++pos) {
+                    framePositions[pos] = nextFrame;
+                    // TODO
+                    nextFrame += 1;
+                }
+                return framePositions;
             }
 
             private int[] pinsKnockedDown(int[] readings) {
