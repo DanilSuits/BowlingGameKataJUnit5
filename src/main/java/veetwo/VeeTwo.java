@@ -19,10 +19,6 @@ public class VeeTwo {
 
             @Override
             public int score(int... readings) {
-                // Test calibration - since minus one isn't a valid
-                // bowling score, this should trip all of the tests
-                if (true) return -1;
-
                 int[] pinsKnockedDown = pinsKnockedDown(readings);
                 return veeOneScore(pinsKnockedDown);
             }
