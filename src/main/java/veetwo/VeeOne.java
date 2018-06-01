@@ -5,6 +5,9 @@
  */
 package veetwo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Danil Suits (danil@vast.com)
  */
@@ -20,7 +23,32 @@ public class VeeOne {
     }
 
     public Legacy.Game adapter() {
-        return legacy();
+        class Adapter implements Legacy.Game {
+            List<Integer> pins = new ArrayList();
+            VeeOne.Game game = game();
+
+            @Override
+            public void roll(int pinsKnockedDown) {
+                pins.add(pinsKnockedDown);
+            }
+
+            @Override
+            public int score() {
+                int[] pinsKnockedDown = pinsKnockedDown(this.pins);
+
+                return game.score(pinsKnockedDown);
+            }
+
+            int [] pinsKnockedDown(List<Integer> pins) {
+                // Bleah, really?
+                int[] pinsKnockedDown = new int[pins.size()];
+                for (int i = 0; i < pinsKnockedDown.length; i++) {
+                    pinsKnockedDown[i] = pins.get(i);
+                }
+                return pinsKnockedDown;
+            }
+        }
+        return new Adapter();
     }
     
     public Game game() {
