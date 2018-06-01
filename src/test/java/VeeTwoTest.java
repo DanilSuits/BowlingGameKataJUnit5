@@ -4,6 +4,7 @@
  * http://www.vast.com
  */
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import veetwo.VeeTwo;
@@ -43,6 +44,7 @@ public class VeeTwoTest {
     }
 
     @Test
+    @Disabled
     public void testBustInTheFinalPin() {
         VeeTwo veeTwo = new VeeTwo();
         VeeTwo.Game game = veeTwo.game();
