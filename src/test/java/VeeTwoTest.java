@@ -53,4 +53,14 @@ public class VeeTwoTest {
         int score = game.score(readings);
         Assertions.assertEquals(267, score);
     }
+
+    @Test
+    public void testSpareInFirstFrame() {
+        VeeTwo veeTwo = new VeeTwo();
+        VeeTwo.Game game = veeTwo.game();
+        int [] perfectGame = {1,0,0,0,0,0,0,0,0,0,0,0,0};
+
+        int score = game.score(perfectGame);
+        Assertions.assertEquals(280, score);
+    }
 }
