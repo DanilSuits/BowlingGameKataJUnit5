@@ -15,6 +15,13 @@ public class Legacy {
     }
 
     public Game game() {
+        /**
+         * The Bowling Game Kata from UncleBob
+         * http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata
+         *
+         * @author Tim Riemer
+         * @version 1.0
+         */
         class BowlingGame implements Game {
             private final int[] rolls = new int[21];
             private int currentRoll;
