@@ -31,4 +31,14 @@ public class VeeTwoTest {
         int score = game.score(readings);
         Assertions.assertEquals(240, score);
     }
+
+    @Test
+    public void testRedeemedInTheFinalFrame() {
+        VeeTwo veeTwo = new VeeTwo();
+        VeeTwo.Game game = veeTwo.game();
+        int [] readings = {10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,0,0,0};
+
+        int score = game.score(readings);
+        Assertions.assertEquals(30, score);
+    }
 }
