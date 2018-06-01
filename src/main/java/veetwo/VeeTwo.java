@@ -51,8 +51,11 @@ public class VeeTwo {
 
                 for (int pos = 0; pos < framePositions.length; ++pos) {
                     framePositions[pos] = nextFrame;
-                    // TODO
-                    nextFrame += 1;
+                    if (10 == pinsKnockedDown[pos]) {
+                        nextFrame += 1;
+                    } else {
+                        nextFrame += 2;
+                    }
                 }
                 return framePositions;
             }
